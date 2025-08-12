@@ -5,15 +5,15 @@ import { cn } from '../lib/utils'
 import { Tooltip } from './tooltip'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default: 'bg-primary text-primary-foreground hover:bg-primary/90',
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline: 'border border-border bg-background hover:bg-accent hover:text-accent-foreground',
-        secondary: 'bg-foreground/10 text-foreground hover:bg-foreground/20',
-        ghost: 'hover:bg-foreground/10 hover:text-foreground',
+        secondary: 'bg-foreground/5 text-foreground hover:bg-foreground/5',
+        ghost: 'hover:bg-foreground/5 hover:text-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
         brand: 'bg-brand text-brand-foreground hover:bg-brand/90',
       },

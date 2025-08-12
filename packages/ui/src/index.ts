@@ -5,6 +5,9 @@ export * from './components/dialog'
 export * from './components/hover-card'
 export * from './components/tooltip'
 
+// Icons
+export * from './components/icons'
+
 // Utils
 export * from './lib/utils'
 
