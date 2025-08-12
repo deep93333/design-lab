@@ -62,31 +62,47 @@ function App() {
 
 
         <div className='flex flex-col items-start justify-start gap-4 w-full p-2'>
-          <p className='text-xs text-zinc-500 font-mono tracking-widest'>
+          <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
+            duration: 0.6,
+            delay: 0.9,
+            ease: "easeOut"
+          }} className='text-xs text-zinc-500 font-mono tracking-widest'>
             RECENT EXPERIMENTS
-          </p>
+          </motion.p>
 
 
           <div className='flex flex-col items-start justify-start gap-2 w-full'>
 
-            <div className='w-full relative aspect-[16/10] bg-brand flex flex-col items-start justify-start'>
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{
+              duration: 0.6,
+              delay: 1.2,
+              ease: "easeOut"
+            }} className='w-full relative aspect-[16/10] bg-brand flex flex-col items-start justify-start'>
               <Pill />
               <div className='border pointer-events-none border-foreground/5 absolute inset-0 flex flex-col items-start justify-start' />
-            </div>
-            <div className='flex flex-col items-start justify-start gap-1 w-full'>
-              <p className='text-sm text-zinc-900 leading-relaxed'>Quick Capture
-              </p>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{
+              duration: 0.6,
+              delay: 1.2,
+              ease: "easeOut"
+            }} className='flex flex-col items-start justify-start gap-1 w-full'>
+              <motion.p className='text-sm text-zinc-900 leading-relaxed'>Quick Capture
+              </motion.p>
 
               <p className='text-sm text-zinc-500 leading-relaxed'>
                 I was experimenting with quick capture, a tool that allows you to capture ideas and notes quickly and easily. Thinking about building this for Mac.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className='flex flex-col items-start justify-start w-full gap-2'>
-          <p className='text-xs text-zinc-500 font-mono tracking-widest p-2'>
+          <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
+            duration: 0.6,
+            delay: 1.2,
+            ease: "easeOut"
+          }} className='text-xs text-zinc-500 font-mono tracking-widest p-2'>
             LET'S CONNECT
-          </p>
+          </motion.p>
 
           <motion.div
             className='flex flex-col items-start justify-start gap-0 w-full'
