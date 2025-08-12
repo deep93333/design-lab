@@ -21,7 +21,41 @@ function App() {
 
 
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='relative flex flex-col w-full h-full'>
+      <motion.div
+        className='pointer-events-none'
+        initial={{
+          background: 'radial-gradient(circle at top center, rgba(140, 215, 255, 1) 0%, rgba(255, 255, 255, 1) 0%)',
+          filter: 'blur(0px)',
+          width: '100%',
+          height: '50%',
+          top: '0%',
+          left: '50%',
+          transform: 'translate(-50%, 0%)',
+          borderBottomLeftRadius: '50%',
+          borderBottomRightRadius: '50%'
+        }}
+        animate={{
+          background: 'radial-gradient(circle at top center, rgba(140, 215, 255, 0.4) 0%, rgba(255, 255, 255, 1) 100%)',
+          filter: 'blur(100px)',
+          width: '100%',
+          height: '100%',
+          top: '0%',
+          left: '0%',
+          transform: 'translate(0%, 0%)',
+          borderRadius: '0%'
+        }}
+        style={{
+          position: 'absolute',
+          zIndex: -1,
+          pointerEvents: 'none',
+        }}
+        transition={{
+          delay: 1,
+          duration: 3,
+          ease: "easeOut",
+        }}
+      />
       <div className="max-w-xl mx-auto flex flex-col items-start justify-start gap-16 my-16">
         <div className='flex flex-col items-start justify-start gap-4 w-full p-2'>
 
@@ -32,27 +66,28 @@ function App() {
             animate="visible"
             transition={{
               duration: 0.6,
+              delay: 2,
               ease: "easeOut"
             }}
           >
             <h1 className='text-sm text-foreground'>Deep Lakhani.</h1>
-            <p className='text-xs text-zinc-500 font-mono tracking-widest'>DESIGN ENGINEER</p>
+            <p className='text-xs text-foreground/50 font-mono tracking-widest'>DESIGN ENGINEER</p>
           </motion.div>
           <div className="w-full h-full flex flex-col items-start justify-start">
             <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
               duration: 0.6,
-              delay: 0.3,
+              delay: 2.3,
               ease: "easeOut"
-            }} className="text-sm text-zinc-500 leading-relaxed">
+            }} className="text-sm text-foreground/50 leading-relaxed">
               I'm a design engineer focused on crafting enjoyable and delightful experiences. I love building products with careful attention to detail, thinking deeply about how interfaces look, feel and behave.
 
             </motion.p>
             <br />
             <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
               duration: 0.6,
-              delay: 0.6,
+              delay: 2.6,
               ease: "easeOut"
-            }} className="text-sm text-zinc-500 leading-relaxed">
+            }} className="text-sm text-foreground/50 leading-relaxed">
               Previously, I worked at <a href="https://endex.com" className="text-foreground underline decoration-zinc-200 underline-offset-4 underline-w-full">Endex</a> and <a href="https://mintlify.com" className="text-foreground underline decoration-zinc-200 underline-offset-4 underline-w-full">Mintlify</a> as a design engineer.
             </motion.p>
 
@@ -64,9 +99,9 @@ function App() {
         <div className='flex flex-col items-start justify-start gap-4 w-full p-2'>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
             duration: 0.6,
-            delay: 0.9,
+            delay: 2.3,
             ease: "easeOut"
-          }} className='text-xs text-zinc-500 font-mono tracking-widest'>
+          }} className='text-xs text-foreground/50 font-mono tracking-widest'>
             RECENT EXPERIMENTS
           </motion.p>
 
@@ -75,21 +110,21 @@ function App() {
 
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{
               duration: 0.6,
-              delay: 1.2,
+              delay: 2.6,
               ease: "easeOut"
-            }} className='w-full relative aspect-[16/10] bg-brand flex flex-col items-start justify-start'>
+            }} className='w-full relative aspect-[16/10] flex flex-col items-start justify-start'>
               <Pill />
               <div className='border pointer-events-none border-foreground/5 absolute inset-0 flex flex-col items-start justify-start' />
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{
               duration: 0.6,
-              delay: 1.2,
+              delay: 2.9,
               ease: "easeOut"
             }} className='flex flex-col items-start justify-start gap-1 w-full'>
               <motion.p className='text-sm text-zinc-900 leading-relaxed'>Quick Capture
               </motion.p>
 
-              <p className='text-sm text-zinc-500 leading-relaxed'>
+              <p className='text-sm text-foreground/50 leading-relaxed'>
                 I was experimenting with quick capture, a tool that allows you to capture ideas and notes quickly and easily. Thinking about building this for Mac.
               </p>
             </motion.div>
@@ -98,9 +133,9 @@ function App() {
         <div className='flex flex-col items-start justify-start w-full gap-2'>
           <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
             duration: 0.6,
-            delay: 1.2,
+            delay: 3.2,
             ease: "easeOut"
-          }} className='text-xs text-zinc-500 font-mono tracking-widest p-2'>
+          }} className='text-xs text-foreground/50 font-mono tracking-widest p-2'>
             LET'S CONNECT
           </motion.p>
 
@@ -111,7 +146,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 3.5, ease: "easeOut" }}
               className='w-full relative'
             >
               <MotionButton variant="ghost" size="sm" className='w-full group' onClick={() => window.open('mailto:hello@deeplakhani.co', '_blank')}>
@@ -126,7 +161,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 3.8, ease: "easeOut" }}
               className='w-full relative'
             >
               <MotionButton variant="ghost" size="sm" className='w-full group' onClick={() => window.open('https://git.new/deep', '_blank')}>
@@ -141,7 +176,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 4.1, ease: "easeOut" }}
               className='w-full relative'
             >
               <MotionButton layoutId='button' variant="ghost" size="sm" className='w-full group' onClick={() => window.open('https://x.com/deep_lakhani_', '_blank')}>

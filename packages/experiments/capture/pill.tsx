@@ -32,7 +32,7 @@ export function Pill() {
 
 
   return (
-    <div className="relative w-full h-full bg-secondary flex flex-col items-center justify-center">
+    <div className="relative w-full h-full bg-foreground/5 flex flex-col items-center justify-center">
       <Button size="icon-sm" variant="outline" className="absolute top-4 right-4" onClick={() => { setIsOpen(false); setCaptured(false) }}><RefreshCcw className="!size-3" /></Button>
       <AnimatePresence mode="wait">
 
