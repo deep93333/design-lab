@@ -52,11 +52,11 @@ function App() {
         }}
         transition={{
           delay: 1,
-          duration: 3,
+          duration: 2,
           ease: "easeOut",
         }}
       />
-      <div className="max-w-xl mx-auto flex flex-col items-start justify-start gap-16 my-16">
+      <div className="max-w-xl px-4 md:px-0 mx-auto flex flex-col items-start justify-start gap-16 my-16">
         <div className='flex flex-col items-start justify-start gap-4 w-full p-2'>
 
           <motion.div
