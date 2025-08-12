@@ -25,7 +25,7 @@ function App() {
       <motion.div
         className='pointer-events-none'
         initial={{
-          background: 'radial-gradient(circle at top center, rgba(140, 215, 255, 1) 0%, rgba(255, 255, 255, 1) 0%)',
+          background: 'radial-gradient(circle at top center, rgb(255, 140, 182) 0%, rgba(255, 255, 255, 1) 0%)',
           filter: 'blur(0px)',
           width: '100%',
           height: '50%',
@@ -36,7 +36,7 @@ function App() {
           borderBottomRightRadius: '50%'
         }}
         animate={{
-          background: 'radial-gradient(circle at top center, rgba(140, 215, 255, 0.4) 0%, rgba(255, 255, 255, 1) 100%)',
+          background: 'radial-gradient(circle at top center, rgba(255, 140, 182, 0.2) 0%, rgba(255, 255, 255, 1) 100%)',
           filter: 'blur(100px)',
           width: '100%',
           height: '100%',
@@ -52,7 +52,7 @@ function App() {
         }}
         transition={{
           delay: 1,
-          duration: 2,
+          duration: 1,
           ease: "easeOut",
         }}
       />
@@ -70,15 +70,15 @@ function App() {
               ease: "easeOut"
             }}
           >
-            <h1 className='text-sm text-foreground'>Deep Lakhani.</h1>
-            <p className='text-xs text-foreground/50 font-mono tracking-widest'>DESIGN ENGINEER</p>
+            <h1 className='text-sm text-foreground/90'>Deep Lakhani.</h1>
+            <p className='text-xs text-rose-600/60 font-mono tracking-widest'>DESIGN ENGINEER</p>
           </motion.div>
           <div className="w-full h-full flex flex-col items-start justify-start">
             <motion.p variants={fadeUp} initial="hidden" animate="visible" transition={{
               duration: 0.6,
               delay: 2.3,
               ease: "easeOut"
-            }} className="text-sm text-foreground/50 leading-relaxed">
+            }} className="text-sm text-foreground/60 leading-relaxed">
               I'm a design engineer focused on crafting enjoyable and delightful experiences. I love building products with careful attention to detail, thinking deeply about how interfaces look, feel and behave.
 
             </motion.p>
@@ -87,8 +87,8 @@ function App() {
               duration: 0.6,
               delay: 2.6,
               ease: "easeOut"
-            }} className="text-sm text-foreground/50 leading-relaxed">
-              Previously, I worked at <a href="https://endex.com" className="text-foreground underline decoration-zinc-200 underline-offset-4 underline-w-full">Endex</a> and <a href="https://mintlify.com" className="text-foreground underline decoration-zinc-200 underline-offset-4 underline-w-full">Mintlify</a> as a design engineer.
+            }} className="text-sm text-foreground/60 leading-relaxed">
+              Previously, I worked at <a href="https://endex.com" className="text-foreground underline decoration-foreground/20 underline-offset-4 underline-w-full">Endex</a> and <a href="https://mintlify.com" className="text-foreground underline decoration-foreground/20 underline-offset-4 underline-w-full">Mintlify</a> as a design engineer.
             </motion.p>
 
 
@@ -101,7 +101,7 @@ function App() {
             duration: 0.6,
             delay: 2.3,
             ease: "easeOut"
-          }} className='text-xs text-foreground/50 font-mono tracking-widest'>
+          }} className='text-xs text-foreground/60 font-mono tracking-widest'>
             RECENT EXPERIMENTS
           </motion.p>
 
@@ -121,10 +121,10 @@ function App() {
               delay: 2.9,
               ease: "easeOut"
             }} className='flex flex-col items-start justify-start gap-1 w-full'>
-              <motion.p className='text-sm text-zinc-900 leading-relaxed'>Quick Capture
+              <motion.p className='text-sm text-foreground/90 leading-relaxed'>Quick Capture
               </motion.p>
 
-              <p className='text-sm text-foreground/50 leading-relaxed'>
+              <p className='text-sm text-foreground/60 leading-relaxed'>
                 I was experimenting with quick capture, a tool that allows you to capture ideas and notes quickly and easily. Thinking about building this for Mac.
               </p>
             </motion.div>
@@ -135,7 +135,7 @@ function App() {
             duration: 0.6,
             delay: 3.2,
             ease: "easeOut"
-          }} className='text-xs text-foreground/50 font-mono tracking-widest p-2'>
+          }} className='text-xs text-foreground/60 font-mono tracking-widest p-2'>
             LET'S CONNECT
           </motion.p>
 
@@ -150,7 +150,7 @@ function App() {
               className='w-full relative'
             >
               <MotionButton variant="ghost" size="sm" className='w-full group' onClick={() => window.open('mailto:hello@deeplakhani.co', '_blank')}>
-                <EmailIcon className='!size-4 text-zinc-400 group-hover:text-zinc-900 transition-colors duration-200' />
+                <EmailIcon className='!size-4 text-zinc-400 group-hover:text-foreground/90 transition-colors duration-200' />
                 <span>hello@deeplakhani.co</span>
                 <div className='flex-1' />
                 <ArrowUpRightIcon className='!size-3 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200' />
@@ -165,7 +165,7 @@ function App() {
               className='w-full relative'
             >
               <MotionButton variant="ghost" size="sm" className='w-full group' onClick={() => window.open('https://git.new/deep', '_blank')}>
-                <GithubIcon className='!size-4 text-zinc-400 group-hover:text-zinc-900 transition-colors duration-200' />
+                <GithubIcon className='!size-4 text-zinc-400 group-hover:text-foreground/90 transition-colors duration-200' />
                 <span>git.new/deep</span>
                 <div className='flex-1' />
                 <ArrowUpRightIcon className='!size-3 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200' />
@@ -180,7 +180,7 @@ function App() {
               className='w-full relative'
             >
               <MotionButton layoutId='button' variant="ghost" size="sm" className='w-full group' onClick={() => window.open('https://x.com/deep_lakhani_', '_blank')}>
-                <XBrandIcon className='!size-4 text-zinc-400 group-hover:text-zinc-900 transition-colors duration-200' />
+                <XBrandIcon className='!size-4 text-zinc-400 group-hover:text-foreground/90 transition-colors duration-200' />
                 <span>deep_lakhani_</span>
                 <div className='flex-1' />
                 <ArrowUpRightIcon className='!size-3 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200' />
