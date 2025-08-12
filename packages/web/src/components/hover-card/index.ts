@@ -1,9 +1,20 @@
 export {
-  HoverCard, HoverCardArrow, HoverCardBody, HoverCardContent, hoverCardContentVariants, HoverCardDescription, HoverCardFooter, HoverCardHeader,
-  HoverCardTitle, HoverCardTrigger
-} from '../hover-card'
+    HoverCard,
+    HoverCardArrow,
+    HoverCardBody,
+    HoverCardContent, HoverCardDescription,
+    HoverCardFooter,
+    HoverCardHeader,
+    HoverCardTitle,
+    HoverCardTrigger, hoverCardContentVariants
+} from '@deep-design-lab/ui'
 
 export type {
-  HoverCardBodyProps, HoverCardContentProps, HoverCardDescriptionProps, HoverCardFooterProps, HoverCardHeaderProps,
-  HoverCardTitleProps
-} from '../hover-card'
+    HoverCardBodyProps,
+    HoverCardContentProps,
+    HoverCardDescriptionProps,
+    HoverCardFooterProps,
+    HoverCardHeaderProps,
+    HoverCardTitleProps
+} from '@deep-design-lab/ui'
+
