@@ -1,0 +1,81 @@
+# Deep Design Lab - UI Library Development Rules
+
+## Project Overview
+This is a **monorepo** project containing a React UI component library (`@deep-design-lab/ui`) and a web application that demonstrates the components. The UI library is built with Radix UI primitives, **Tailwind CSS v4**, and TypeScript.
+
+### Tech Stack
+- **Package Manager**: Bun (for fast installs and builds)
+- **Styling**: Tailwind CSS v4 (latest version with new features)
+- **Monorepo**: Workspace-based with shared dependencies
+- **Build Tool**: TypeScript compiler (for UI library), Vite (for web app)
+- **Component Primitives**: Radix UI for accessibility
+
+## Code Style & Standards
+
+### TypeScript
+- Always use `type` instead of `interface` for type definitions
+- Prefer explicit typing over `any`
+- Use proper generic constraints
+- Export types alongside components
+
+### React Components
+- Use React.forwardRef for components that need ref forwarding
+- Prefer function components over class components
+- Use proper TypeScript props typing
+- Follow compound component patterns where appropriate
+
+### Styling & Design System
+- Use **Tailwind CSS v4** utility classes with new syntax
+- Leverage CSS custom properties for design tokens (v4 compatible)
+- Follow the established color palette and spacing scale
+- Use Radix UI primitives for accessibility
+- Implement proper focus states and keyboard navigation
+- Note: Tailwind v4 uses `@import "tailwindcss"` instead of individual imports
+
+### File Naming
+- Use PascalCase for component files: `Button.tsx`
+- Use camelCase for utility files: `utils.ts`
+- Use kebab-case for directories: `button/`
+- Export components from index files
+
+## Component Development Guidelines
+
+### Component Requirements
+- Use class-variance-authority (cva) for variant management
+- Support asChild prop via Radix Slot for flexible rendering
+- All components must be keyboard accessible with proper ARIA
+- Use CSS custom properties for design tokens
+- Export both component and variants
+
+## Build & Distribution
+
+### Workspace Scripts (using Bun)
+- `bun run build:ui` - Build the UI library
+- `bun run dev:ui` - Watch mode for UI development  
+- `bun run dev` - Start web development server
+- `bun install` - Install dependencies (faster than npm/yarn)
+
+## Browser Support & Requirements
+- Modern browsers (ES2020+)
+- React 18+
+- TypeScript 5+
+- Bun v1.0+ (for package management and builds)
+- Tailwind CSS v4 (latest features and syntax)
+
+## Creating New Components
+1. Create component directory in `packages/ui/src/components/`
+2. Implement with TypeScript types and cva variants
+3. Add to main index.ts export
+4. Build and test integration
+
+## Publishing to NPM
+1. Update version in package.json
+2. Run `bun run build`
+3. Run `npm publish --access public`
+
+## Monorepo Best Practices
+- Keep shared dependencies in root package.json
+- Use workspace protocol (`workspace:*`) for internal dependencies
+- Use Bun workspaces for efficient dependency management
+
+Remember: This is a **monorepo design system** using **Bun** and **Tailwind CSS v4**, meant to be used across multiple projects. Prioritize consistency, accessibility, and developer experience.

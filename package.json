@@ -1,0 +1,30 @@
+{
+  "name": "deep-design-lab",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "packages/experiments/*"
+  ],
+  "scripts": {
+    "dev": "bun --filter @deep-design-lab/web dev",
+    "build": "bun --filter @deep-design-lab/web build",
+    "lint": "bun --filter @deep-design-lab/web lint",
+    "preview": "bun --filter @deep-design-lab/web preview",
+    "dev:web": "bun --filter @deep-design-lab/web dev",
+    "build:web": "bun --filter @deep-design-lab/web build",
+    "build:ui": "bun --filter @deep-design-lab/ui build",
+    "dev:ui": "bun --filter @deep-design-lab/ui dev",
+    "build:capture": "bun --filter @deep-design-lab/capture build",
+    "dev:capture": "bun --filter @deep-design-lab/capture dev"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "motion": "^12.23.12",
+    "tailwindcss": "^4.1.11"
+  }
+}

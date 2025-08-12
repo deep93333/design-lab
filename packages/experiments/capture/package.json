@@ -1,0 +1,46 @@
+{
+  "name": "@deep-design-lab/capture",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./style.css": "./style.css"
+  },
+  "files": [
+    "*.ts",
+    "*.tsx",
+    "*.css",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && cp style.css dist/",
+    "dev": "echo 'No build step needed for development - components are used directly as TypeScript files'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@deep-design-lab/ui": "workspace:*",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "motion": "^12.23.12",
+    "lucide-react": "^0.536.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "~5.8.3"
+  }
+}
