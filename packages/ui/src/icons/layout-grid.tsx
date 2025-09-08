@@ -1,6 +1,7 @@
-import { type SVGProps } from "react";
 
-export function LayoutGridIcon(props: SVGProps<SVGSVGElement>) {
+import type { IconProps } from "./types";
+
+export function LayoutGridIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +10,7 @@ export function LayoutGridIcon(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       {...props}
+      aria-hidden="true"
     >
       <path
         d="M7.86252 3.00005C7.06713 2.99962 6.47647 2.9993 5.96482 3.13639C4.58445 3.50626 3.50626 4.58445 3.13639 5.96482C2.9993 6.47647 2.99962 7.06713 3.00005 7.86252L3.0001 8.0001C3.0001 8.55238 3.44781 9.0001 4.0001 9.0001H10.0001C10.5524 9.0001 11.0001 8.55238 11.0001 8.0001V4.0001C11.0001 3.44781 10.5524 3.0001 10.0001 3.0001L7.86252 3.00005Z"

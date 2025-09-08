@@ -1,12 +1,14 @@
 import { cn } from "../lib/utils";
+import type { IconProps } from "./types";
 
-export const BulletIcon = ({ className }: { className?: string }) => {
+export const BulletIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M8 7C8 8.10457 7.10457 9 6 9C4.89543 9 4 8.10457 4 7C4 5.89543 4.89543 5 6 5C7.10457 5 8 5.89543 8 7Z"

@@ -1,12 +1,14 @@
 import { cn } from "../lib/utils";
+import type { IconProps } from "./types";
 
-export const LinkIcon = ({ className }: { className?: string }) => {
+export const LinkIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M10 5.5L10.7514 4.75837C13.0959 2.41387 16.8971 2.41388 19.2416 4.75837C21.5861 7.10287 21.5861 10.9041 19.2416 13.2486L18.5 14"

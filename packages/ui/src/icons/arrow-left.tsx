@@ -1,7 +1,6 @@
-type ArrowLeftIconProps = {
-  className?: string
-}
-export const ArrowLeftIcon = ({ className }: A) => {
+import type { IconProps } from "./types";
+
+export const ArrowLeftIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,9 +13,10 @@ export const ArrowLeftIcon = ({ className }: A) => {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
+      aria-hidden="true"
     >
       <path d="m12 19-7-7 7-7" />
       <path d="M19 12H5" />
     </svg>
   );
-}
+};

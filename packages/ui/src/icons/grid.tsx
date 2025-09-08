@@ -1,4 +1,4 @@
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
 
 export function GridIcon({ className, ...props }: IconProps) {
   return (
@@ -8,6 +8,7 @@ export function GridIcon({ className, ...props }: IconProps) {
       fill="none"
       className={className}
       {...props}
+      aria-hidden="true"
     >
       <path
         d="M7.16146 3H11V11H3V7.16145C2.99998 6.63432 2.99997 6.17954 3.03057 5.80497C3.06287 5.40963 3.13419 5.01641 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.01641 3.13419 5.40963 3.06287 5.80497 3.03057C6.17954 2.99997 6.63433 2.99998 7.16146 3Z"

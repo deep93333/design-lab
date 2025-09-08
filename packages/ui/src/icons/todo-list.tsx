@@ -1,12 +1,13 @@
 import { cn } from "../lib/utils";
-
-export const TodoListIcon = ({ className }: { className?: string }) => {
+import type { IconProps } from "./types";
+export const TodoListIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M13 16H20"

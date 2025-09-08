@@ -1,12 +1,14 @@
 import { cn } from "../lib/utils";
+import type { IconProps } from "./types";
 
-export const Heading3Icon = ({ className }: { className?: string }) => {
+export const Heading3Icon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M13 5V12M13 12V19M13 12H3M3 12V5M3 12V19"

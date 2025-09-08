@@ -1,6 +1,6 @@
-import type { FC, SVGProps } from "react";
+import type { IconProps } from "./types";
 
-export const PinIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+export const PinIcon = ({ className, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -8,6 +8,7 @@ export const PinIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) =>
     viewBox="0 0 24 24"
     fill="none"
     className={className}
+    aria-hidden="true"
     {...props}
   >
     <path

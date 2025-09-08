@@ -1,6 +1,7 @@
-import type { FC, SVGProps } from "react";
+import type { IconProps } from "./types";
 
-export const MacintoshIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+
+export const MacintoshIcon = ({ className, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

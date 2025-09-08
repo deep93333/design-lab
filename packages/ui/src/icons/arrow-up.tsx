@@ -7,6 +7,7 @@ export const ArrowUpIcon = ({ className }: { className?: string }) => {
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M12 5V20"

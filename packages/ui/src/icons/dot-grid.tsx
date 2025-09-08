@@ -1,4 +1,4 @@
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
 
 export function DotGridIcon({ className, ...props }: IconProps) {
   return (
@@ -8,6 +8,7 @@ export function DotGridIcon({ className, ...props }: IconProps) {
       fill="none"
       className={className}
       {...props}
+      aria-hidden="true"
     >
       <path
         fillRule="evenodd"

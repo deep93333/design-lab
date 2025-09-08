@@ -1,12 +1,14 @@
 import { cn } from "../lib/utils";
+import type { IconProps } from "./types";
 
-export const CropIcon = ({ className }: { className?: string }) => {
+export const CropIcon = ({ className }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={cn("size-4", className)}
       viewBox="0 0 24 24"
       fill="none"
+      aria-hidden="true"
     >
       <path
         d="M14 9H9V14C9 14.5523 9.44772 15 10 15H15V10C15 9.44772 14.5523 9 14 9Z"

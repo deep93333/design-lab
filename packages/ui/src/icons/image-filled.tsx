@@ -1,4 +1,5 @@
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
+
 
 export function ImageFilledIcon({ className, ...props }: IconProps) {
   return (
@@ -8,6 +9,7 @@ export function ImageFilledIcon({ className, ...props }: IconProps) {
       fill="none"
       className={className}
       {...props}
+      aria-hidden="true"
     >
       <path
         d="M14.5 7C13.1193 7 12 8.11929 12 9.5C12 10.8807 13.1193 12 14.5 12C15.8807 12 17 10.8807 17 9.5C17 8.11929 15.8807 7 14.5 7Z"

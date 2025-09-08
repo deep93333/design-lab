@@ -1,4 +1,4 @@
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
 
 export function CopyFilledIcon({ className, ...props }: IconProps) {
   return (
@@ -8,6 +8,7 @@ export function CopyFilledIcon({ className, ...props }: IconProps) {
       fill="none"
       className={className}
       {...props}
+      aria-hidden="true"
     >
       <path
         fillRule="evenodd"

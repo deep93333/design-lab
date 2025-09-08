@@ -12,6 +12,7 @@ export function ClockIcon({ className, ...props }: IconProps) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
       className={className}
       {...props}
     >

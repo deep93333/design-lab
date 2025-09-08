@@ -1,14 +1,15 @@
-import { type SVGProps } from "react";
+import type { IconProps } from "./types";
 
-export function LayoutHalfIcon(props: SVGProps<SVGSVGElement>) {
+
+export function LayoutHalfIcon({ className, ...props }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      className={className}
       viewBox="0 0 24 24"
       fill="none"
       {...props}
+      aria-hidden="true"
     >
       <path
         d="M8.75869 3H15.2413C16.0463 2.99999 16.7106 2.99998 17.2518 3.04419C17.8139 3.09012 18.3306 3.18868 18.816 3.43598C19.5686 3.81947 20.1805 4.43139 20.564 5.18404C20.8113 5.66937 20.9099 6.18608 20.9558 6.74818C21 7.28936 21 7.95372 21 8.75868V11L3 11V8.7587C2.99999 7.95374 2.99998 7.28937 3.04419 6.74818C3.09012 6.18608 3.18868 5.66937 3.43598 5.18404C3.81947 4.43139 4.43139 3.81947 5.18404 3.43598C5.66937 3.18868 6.18608 3.09012 6.74818 3.04419C7.28937 2.99998 7.95372 2.99999 8.75869 3Z"

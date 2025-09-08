@@ -1,4 +1,4 @@
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
 
 export function ChevronRightIcon({ className, ...props }: IconProps) {
   return (
@@ -7,6 +7,7 @@ export function ChevronRightIcon({ className, ...props }: IconProps) {
       viewBox="0 0 24 24"
       fill="none"
       className={className}
+      aria-hidden="true"
       {...props}
     >
       <path

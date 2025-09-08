@@ -1,10 +1,14 @@
-type AtRiskIconProps = {
-  className?: string;
-};
+import type { IconProps } from "./types";
 
-export const AtRiskIcon = ({ className }: AtRiskIconProps) => {
+export const AtRiskIcon = ({ className }: IconProps) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

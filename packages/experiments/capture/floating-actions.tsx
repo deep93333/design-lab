@@ -20,7 +20,6 @@ import {
 
 import { motion } from "motion/react";
 import {
-  useCallback,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -36,33 +35,19 @@ export function FloatingActions() {
   const [activeElement, setActiveElement] = useState<ActiveAction>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("list");
   const [, setShowImagesGallery] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark" | "system">("light");
 
   const actionContentRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const containerStyle =
     "rounded-xl bg-[#fdfdfd] box-ring-shadow ring-[0.85px] ring-foreground/10";
 
-  const debouncedSearch = useCallback(() => {
-    setIsSearching(true);
-    const timeoutId = setTimeout(() => {
-      setIsSearching(false);
-    }, 300);
-    return () => clearTimeout(timeoutId);
-  }, []);
 
-  const handleSearchChange = useCallback(
-    (value: string) => {
-      setSearchQuery(value);
-      debouncedSearch();
-    },
-    [debouncedSearch],
-  );
+
+
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -151,7 +136,7 @@ export function FloatingActions() {
             <Button
               variant={theme === "light" ? "secondary" : "ghost"}
               className="group"
-              onClick={() => setViewMode("list")}
+              onClick={() => setTheme("light")}
             >
               <LayoutHalfIcon className="size-5" />
               Light
@@ -159,7 +144,7 @@ export function FloatingActions() {
             <Button
               variant={theme === "dark" ? "secondary" : "ghost"}
               className="group"
-              onClick={() => setViewMode("grid")}
+              onClick={() => setTheme("dark")}
             >
               <GridIcon className="size-5" />
               Dark
@@ -167,7 +152,7 @@ export function FloatingActions() {
             <Button
               variant={theme === "dark" ? "secondary" : "ghost"}
               className="group"
-              onClick={() => setViewMode("grid")}
+              onClick={() => setTheme("system")}
             >
               <MacintoshIcon className="size-5" />
               System
@@ -188,7 +173,7 @@ export function FloatingActions() {
                   className="flex-1 !text-base bg-transparent outline-none px-2 placeholder:text-foreground/30"
                   placeholder="Search notes..."
                   value={searchQuery}
-                  onChange={(e) => handleSearchChange(e.target.value)}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   aria-label="Search notes"
                 />
 

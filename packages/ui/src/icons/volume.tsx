@@ -1,6 +1,6 @@
-import type { FC, SVGProps } from "react";
+import type { IconProps } from "./types";
 
-export const VolumeIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+export const VolumeIcon = ({ className, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -9,6 +9,7 @@ export const VolumeIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props })
     fill="none"
     className={className}
     {...props}
+    aria-hidden="true"
   >
     <path
       d="M13 5.13493C13 3.43926 11.0223 2.51294 9.71963 3.59848L5.91608 6.76811C5.73637 6.91787 5.50984 6.99989 5.2759 6.99989H4C2.34315 6.99989 1 8.34303 1 9.99989V13.9999C1 15.6567 2.34315 16.9999 4 16.9999H5.2759C5.50984 16.9999 5.73637 17.0819 5.91608 17.2317L9.71963 20.4013C11.0223 21.4868 13 20.5605 13 18.8648V5.13493Z"

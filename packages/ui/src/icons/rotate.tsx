@@ -1,6 +1,7 @@
-import type { FC, SVGProps } from "react";
+import type { IconProps } from "./types";
 
-export const RotateIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+
+export const RotateIcon = ({ className, ...props }: IconProps) => (
   <svg
     className={className}
     fill="none"
@@ -8,6 +9,7 @@ export const RotateIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props })
     viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
     {...props}
   >
     <path
