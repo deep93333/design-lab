@@ -2,110 +2,261 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-
-
 @font-face {
-  font-family: "Inter var";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/InterVariable.woff2") format("woff2");
+	font-family: "Inter var";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/InterVariable.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url("/GeistMono-Regular.woff2") format("woff2");
+	font-family: "JetBrains Mono";
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url("/GeistMono-Regular.woff2") format("woff2");
 }
 
 /* Light theme variables - default */
 :root {
-  /* Colors */
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(223, 89%, 7%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(222.2 84% 4.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(222.2 84% 4.9%);
-  --primary: hsl(240 5.9% 10%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
-  --secondary-foreground: hsl(222.2 84% 4.9%);
-  --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 46.1%);
-  --accent: hsl(240 4.8% 95.9%);
-  --accent-foreground: hsl(222.2 84% 4.9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(240 5.9% 90%);
-  --input: hsl(240 5.9% 90%);
-  --ring: hsl(221.2 83.2% 53.3%);
-  --brand: hsl(63.142 100% 57.251%);
-  --brand-foreground: hsl(210 40% 98%);
+	/* Colors */
+	--background: hsl(0 0% 100%);
+	--foreground: hsl(223, 89%, 7%);
+	--card: hsl(0 0% 100%);
+	--card-foreground: hsl(222.2 84% 4.9%);
+	--popover: hsl(0 0% 100%);
+	--popover-foreground: hsl(222.2 84% 4.9%);
+	--primary: hsl(240 5.9% 10%);
+	--primary-foreground: hsl(0 0% 98%);
+	--secondary: hsl(240 4.8% 95.9%);
+	--secondary-foreground: hsl(222.2 84% 4.9%);
+	--muted: hsl(240 4.8% 95.9%);
+	--muted-foreground: hsl(240 3.8% 46.1%);
+	--accent: hsl(240 4.8% 95.9%);
+	--accent-foreground: hsl(222.2 84% 4.9%);
+	--destructive: hsl(0 84.2% 60.2%);
+	--destructive-foreground: hsl(210 40% 98%);
+	--border: hsl(240 5.9% 90%);
+	--input: hsl(240 5.9% 90%);
+	--ring: hsl(221.2 83.2% 53.3%);
+	--brand: hsl(335, 100%, 57%);
+	--brand-foreground: hsl(210 40% 98%);
 
-  /* Border radius */
-  --radius: 0.5rem;
-  
-  /* Font families */
-  --font-sans: "Inter var", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+	/* Border radius */
+	--radius: 0.5rem;
+
+	/* Font families */
+	--font-sans: "Inter var", sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
 }
 
 /* Dark theme variables */
-[data-theme=dark] {
-  --background: hsl(222.2 84% 4.9%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(222.2 84% 4.9%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(222.2 84% 4.9%);
-  --popover-foreground: hsl(210 40% 98%);
-  --primary: hsl(217.2 91.2% 59.8%);
-  --primary-foreground: hsl(222.2 84% 4.9%);
-  --secondary: hsl(217.2 32.6% 17.5%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(217.2 32.6% 17.5%);
-  --muted-foreground: hsl(215 20.2% 65.1%);
-  --accent: hsl(217.2 32.6% 17.5%);
-  --accent-foreground: hsl(210 40% 98%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(217.2 32.6% 17.5%);
-  --input: hsl(217.2 32.6% 17.5%);
-  --ring: hsl(224.3 76.3% 94.1%);
-  --brand: hsl(63.142 100% 57.251%);
-  --brand-foreground: hsl(210 40% 98%);
+[data-theme="dark"] {
+	--background: hsl(222.2 84% 4.9%);
+	--foreground: hsl(210 40% 98%);
+	--card: hsl(222.2 84% 4.9%);
+	--card-foreground: hsl(210 40% 98%);
+	--popover: hsl(222.2 84% 4.9%);
+	--popover-foreground: hsl(210 40% 98%);
+	--primary: hsl(217.2 91.2% 59.8%);
+	--primary-foreground: hsl(222.2 84% 4.9%);
+	--secondary: hsl(217.2 32.6% 17.5%);
+	--secondary-foreground: hsl(210 40% 98%);
+	--muted: hsl(217.2 32.6% 17.5%);
+	--muted-foreground: hsl(215 20.2% 65.1%);
+	--accent: hsl(217.2 32.6% 17.5%);
+	--accent-foreground: hsl(210 40% 98%);
+	--destructive: hsl(0 62.8% 30.6%);
+	--destructive-foreground: hsl(210 40% 98%);
+	--border: hsl(217.2 32.6% 17.5%);
+	--input: hsl(217.2 32.6% 17.5%);
+	--ring: hsl(224.3 76.3% 94.1%);
+	--brand: hsl(63.142 100% 57.251%);
+	--brand-foreground: hsl(210 40% 98%);
 }
 
 /* Tailwind v4 theme configuration using CSS variables */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-brand: var(--brand);
-  --color-brand-foreground: var(--brand-foreground);
-  --radius: var(--radius);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-brand: var(--brand);
+	--color-brand-foreground: var(--brand-foreground);
+	--radius: var(--radius);
+	--font-sans: var(--font-sans);
+	--font-mono: var(--font-mono);
 }
 
 .no-scrollbar {
-  scrollbar-width: none;
+	scrollbar-width: none;
+}
+
+/* Simple fade-in utility */
+@keyframes ddl-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(2px);
+		filter: blur(2px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+}
+.fade-in-quick {
+	animation: ddl-fade-in 220ms ease-out both;
+}
+
+/* Markdown (ReactMarkdown) prose styles */
+.prose {
+	color: var(--foreground);
+	line-height: 1.7;
+}
+.prose :where(p, ul, ol, pre, table, blockquote, img, hr) {
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+.prose :where(h1, h2, h3, h4, h5, h6) {
+	color: var(--foreground);
+	line-height: 1.25;
+	margin: 1.25rem 0 0.75rem;
+}
+.prose h1 {
+	font-size: 1.875rem;
+	font-weight: 700;
+}
+.prose h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.prose h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+.prose h4 {
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+.prose h5 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+.prose h6 {
+	font-size: 0.875rem;
+	font-weight: 600;
+	opacity: 0.8;
+}
+
+.prose a {
+	color: var(--foreground);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: color-mix(in oklab, var(--foreground) 20%, transparent);
+}
+.prose a:hover {
+	text-decoration-color: var(--foreground);
+}
+
+.prose code {
+	font-family: var(--font-mono);
+	background: var(--muted);
+	color: var(--foreground);
+	padding: 0.1rem 0.35rem;
+	border-radius: calc(var(--radius) / 2);
+	border: 1px solid var(--border);
+}
+.prose pre {
+	background: var(--muted);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow-x: auto;
+}
+.prose pre code {
+	display: block;
+	padding: 0.75rem 1rem;
+	background: transparent;
+	border: 0;
+}
+
+.prose blockquote {
+	border-left: 3px solid var(--border);
+	padding-left: 0.875rem;
+	color: color-mix(in oklab, var(--foreground) 85%, transparent);
+}
+
+.prose ul {
+	list-style: disc;
+	padding-left: 1.25rem;
+}
+.prose ol {
+	list-style: decimal;
+	padding-left: 1.25rem;
+}
+.prose li {
+	margin: 0.25rem 0;
+}
+.prose li > ul,
+.prose li > ol {
+	margin: 0.25rem 0 0.5rem 1rem;
+}
+.prose input[type="checkbox"] {
+	transform: translateY(1px);
+}
+
+.prose table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+}
+.prose thead th {
+	text-align: left;
+	font-weight: 600;
+	background: color-mix(in oklab, var(--foreground) 6%, var(--background));
+}
+.prose th,
+.prose td {
+	border: 1px solid var(--border);
+	padding: 0.5rem 0.75rem;
+}
+
+.prose hr {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 1.25rem 0;
+}
+
+.prose img {
+	max-width: 100%;
+	height: auto;
+	border-radius: calc(var(--radius) - 2px);
+	border: 1px solid var(--border);
+}
+
+.prose kbd {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	background: var(--muted);
+	border: 1px solid var(--border);
+	border-bottom-width: 2px;
+	padding: 0.1rem 0.35rem;
+	border-radius: 4px;
 }

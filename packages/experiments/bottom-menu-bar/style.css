@@ -1,0 +1,111 @@
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.not-draggable {
+  -webkit-app-region: no-drag !important;
+}
+
+/* Custom text selection colors */
+::selection {
+  background-color: hsl(var(--brand) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+::-moz-selection {
+  background-color: hsl(var(--brand) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Selection in input and textarea elements */
+input::selection,
+textarea::selection {
+  background-color: hsl(var(--brand) / 0.25);
+  color: hsl(var(--foreground));
+}
+
+input::-moz-selection,
+textarea::-moz-selection {
+  background-color: hsl(var(--brand) / 0.25);
+  color: hsl(var(--foreground));
+}
+
+/* Selection in code blocks */
+pre::selection,
+code::selection {
+  background-color: hsl(var(--brand) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+pre::-moz-selection,
+code::-moz-selection {
+  background-color: hsl(var(--brand) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* Selection in content editable elements */
+[contenteditable]::selection {
+  background-color: hsl(var(--brand) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+[contenteditable]::-moz-selection {
+  background-color: hsl(var(--brand) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Alternative accent color selection */
+.accent-selection::selection {
+  background-color: hsl(var(--accent) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+.accent-selection::-moz-selection {
+  background-color: hsl(var(--accent) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Success color selection */
+.success-selection::selection {
+  background-color: hsl(var(--success) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+.success-selection::-moz-selection {
+  background-color: hsl(var(--success) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+
+.corner-smoothing {
+  -electron-corner-smoothing: system-ui;  /* Match the system UI design. */
+}
+
+.box-ring {
+  box-shadow: hsl(var(--foreground) / 0.15 ) 0px 0px 0px 1px, hsl(0 0 0/0.3) 0px 5px 10px -2px, hsl(0 0 0/0.1) 0px 2px 6px -2px;
+}
+
+.box-ring-enhanced {
+  --tw-shadow: 0 4px 12px hsl(0 0% 0% / 0.35), inset 0 1px hsl(var(--foreground) / 0.05);
+  --tw-shadow-colored: 0 4px 12px var(--tw-shadow-color), inset 0 1px var(--tw-shadow-color);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: hsl(var(--foreground) / 0.15) 0px 0px 0px 1px;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+
+
+
+
+
+
+  .note-shadow {
+    box-shadow: 0px 1.5px 0px hsla(0,0%,100%,.03) inset,0px 0px 0px 1px hsla(0,0%,100%,.05) inset,0px 0px 0px 1px rgba(0,0,0,.1),0px 2px 2px 0px rgba(0,0,0,.1),0px 4px 4px 0px rgba(0,0,0,.1),0px 8px 8px 0px rgba(0,0,0,.1)
+  
+
+  }
