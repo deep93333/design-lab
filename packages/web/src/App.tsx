@@ -68,10 +68,10 @@ function App() {
       <div className="px-4 md:px-0 mx-auto w-fit">
         <div className="max-w-2xl ring-[0.6px] ring-foreground/10 flex flex-col items-start justify-start">
           <Separator />
-          <ContentBox className="flex flex-col items-start justify-start gap-4 w-full py-12">
+          <ContentBox className="flex flex-col items-start justify-start gap-4 w-full py-6 md:py-12">
 
             <motion.div
-              className="flex gap-1 flex-col items-start justify-start px-8"
+              className="flex gap-1 flex-col items-start justify-start px-4 md:px-8"
               variants={fadeUp}
               initial="hidden"
               animate="visible"
@@ -86,7 +86,7 @@ function App() {
                 DESIGN ENGINEER
               </p>
             </motion.div>
-            <div className="w-full h-full flex flex-col items-start justify-center px-8">
+            <div className="w-full h-full flex flex-col items-start justify-center px-4 md:px-8">
               <motion.p
                 variants={fadeUp}
                 initial="hidden"
@@ -113,26 +113,22 @@ function App() {
                   delay: 2.6,
                   ease: "easeOut",
                 }}
-                className="text-sm flex items-center text-foreground/60 leading-relaxed"
+                className="text-sm flex flex-wrap items-center text-foreground/60 leading-relaxed"
               >
                 Previously, I worked at{" "}
-
                 <a
                   href="https://endex.app"
                   className="text-foreground px-2 inline-flex items-center gap-1 underline decoration-foreground/20 underline-offset-4 underline-w-full"
                 >
-                  <img src="https://www.google.com/s2/favicons?domain=endex.ai&sz=128" alt="Endex" className="w-4 h-4 object-cover" />
-
+                  <img src="https://www.google.com/s2/favicons?domain=endex.ai&sz=128" alt="Endex" className="w-3 h-3 object-cover" />
                   Endex
                 </a>{" "}
                 and{" "}
-
                 <a
                   href="https://mintlify.com"
-                  className="text-foreground px-2 inline-flex items-center gap-1 underline decoration-foreground/20 underline-offset-4 underline-w-full"
+                  className="text-foreground px-1 inline-flex items-center gap-1 underline decoration-foreground/20 underline-offset-4 underline-w-full"
                 >
-                  <img src="https://www.google.com/s2/favicons?domain=mintlify.com&sz=128" alt="Mintlify" className="w-4 h-4 object-cover" />
-
+                  <img src="https://www.google.com/s2/favicons?domain=mintlify.com&sz=128" alt="Mintlify" className="w-3 h-3 object-cover" />
                   Mintlify
                 </a>{" "}
                 as a design engineer.
@@ -142,7 +138,7 @@ function App() {
 
           <Separator />
 
-          <ContentBox className="flex flex-col items-start justify-start w-full py-8">
+          <ContentBox className="flex flex-col items-start justify-start w-full py-4 md:py-8">
             <SectionLabel label="PROJECTS" delay={2} />
             <div className="flex flex-col gap-1 w-full">
               <Project
@@ -163,7 +159,7 @@ function App() {
 
           <Separator />
 
-          <ContentBox className="flex flex-col items-start justify-start w-full py-8">
+          <ContentBox className="flex flex-col items-start justify-start w-full py-4 md:py-8">
             <SectionLabel label="RECENT EXPERIMENTS" delay={2.3} />
             <div className="flex flex-col divide-y divide-foreground/5 w-full">
               <Experiment
@@ -182,7 +178,7 @@ function App() {
           </ContentBox>
           <Separator />
 
-          <ContentBox className="flex flex-col items-start justify-start w-full py-8">
+          <ContentBox className="flex flex-col items-start justify-start w-full py-4 md:py-8">
             <SectionLabel label="LET'S CONNECT" delay={3.2} />
 
             <motion.div
@@ -248,7 +244,7 @@ export const ConnectButton = ({
       <MotionButton
         variant="ghost"
         size="lg"
-        className="w-full group px-8 py-2 rounded-none"
+        className="w-full group px-4 md:px-8 py-2 rounded-none"
         onClick={() => window.open(href, "_blank")}
         onMouseEnter={playHoverSound}
       >
@@ -279,7 +275,7 @@ export const SectionLabel = ({
         delay: delay,
         ease: "easeOut",
       }}
-      className="text-xs px-8 py-4 text-foreground/60 font-mono tracking-widest"
+      className="text-xs px-4 md:px-8 py-4 text-foreground/60 font-mono tracking-widest"
     >
       {label}
     </motion.p>
@@ -300,7 +296,7 @@ export const Experiment = ({
   return (
     <div
       className={cn(
-        "flex px-8  flex-col items-start justify-start w-full",
+        "flex px-4 md:px-8  flex-col items-start justify-start w-full",
         className,
       )}
     >
@@ -402,7 +398,7 @@ export const ContentBox = ({
   const initial = { opacity: 0 };
   const animate = { opacity: 1 };
   return (
-    <div className={cn("relative flex flex-col items-start justify-start w-full py-8", className)}>
+    <div className={cn("relative flex flex-col items-start justify-start w-full py-4 md:py-8", className)}>
       <motion.div className="w-1.5 h-1.5 border-l border-l-foreground/30 border-t border-t-foreground/30 absolute left-0 bg-transparent top-0 " initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
       <motion.div className="w-1.5 h-1.5 border-l border-l-foreground/30 border-b border-b-foreground/30 absolute left-0 bg-transparent bottom-0" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
       {children}
@@ -429,7 +425,7 @@ export const Project = ({
 
   return (
     <button
-      className="flex py-4 px-8 relative group hover:bg-foreground/5  cursor-pointer flex-row items-center justify-start gap-3 w-full text-left"
+      className="flex py-4 px-4 md:px-8 relative group hover:bg-[#f1f1f1]  cursor-pointer flex-row items-start justify-start gap-3 w-full text-left"
       onClick={() => {
         window.open(href, "_blank");
       }}
