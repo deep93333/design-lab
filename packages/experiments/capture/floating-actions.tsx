@@ -45,10 +45,6 @@ export function FloatingActions() {
   const containerStyle =
     "rounded-xl bg-[#fdfdfd] box-ring-shadow ring-[0.85px] ring-foreground/10";
 
-
-
-
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {

@@ -6,4 +6,5 @@ export * from "./note-mode";
 export * from "./pill";
 export * from "./shortcut";
 export * from "./utils";
+export * from "./book"
 

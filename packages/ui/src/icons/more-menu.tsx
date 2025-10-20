@@ -1,12 +1,15 @@
 import { cn } from "../lib/utils";
+import type { IconProps } from "./types";
 
-export function MoreMenuIcon({ className }: { className?: string }) {
+
+export function MoreMenuIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
       className={cn("size-full", className)}
+      aria-hidden="true"
     >
       <path
         fill-rule="evenodd"

@@ -1,5 +1,5 @@
 import { FloatingActions } from "@deep-design-lab/bottom-menu-bar";
-import { cn, Pill } from "@deep-design-lab/capture";
+import { Book, cn, Pill } from "@deep-design-lab/capture";
 import {
   ArrowUpRightIcon,
   Button,
@@ -173,6 +173,19 @@ function App() {
                 title="Floating Actions"
                 description="This is better way to show actions always visible, accessible and easy to use."
                 component={<FloatingActions />}
+              />
+
+              <Experiment
+                className="pt-8"
+                title="Book"
+                description="Created this book UI for my capture app spaces"
+                component={
+                <div className="w-full h-full gap-8 flex items-center justify-center">
+                <Book />
+                <Book color="rgb(186.68, 1.2749, 57.73)" />
+                </div>
+                
+                }
               />
             </div>
           </ContentBox>
