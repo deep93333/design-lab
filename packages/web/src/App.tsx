@@ -28,7 +28,7 @@
 
   function App() {
     return (
-      <div className="relative bg-[#f9f9f9] flex flex-col w-screen h-screen">
+      <div className="relative bg-[#f9f9f9] flex flex-col w-screen antialiased ">
         {/* <motion.div
           className="px-4 md:px-0 pointer-events-none bg-[#f5f5f5]"
           initial={{
@@ -81,7 +81,7 @@
                   ease: "easeOut",
                 }}
               >
-                <h1 className="text-sm text-foreground/90">Deep Lakhani.</h1>
+                <h1 className="text-sm font-medium text-foreground/90">Deep Lakhani.</h1>
                 <p className="text-xs text-foreground/60 font-mono tracking-widest">
                   DESIGN ENGINEER
                 </p>
@@ -338,7 +338,7 @@
           }}
           className="flex pt-4 pb-8 flex-col items-start justify-start gap-1 w-full"
         >
-          <motion.p className="text-sm text-foreground/90 leading-relaxed">
+          <motion.p className="text-sm font-medium text-foreground/90 leading-relaxed">
             {title}
           </motion.p>
           <p className="text-sm text-foreground/60 leading-relaxed">

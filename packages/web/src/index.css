@@ -8,4 +8,9 @@ html, body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
 }

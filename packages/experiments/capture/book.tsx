@@ -13,7 +13,7 @@ export function Book({color,title="Notebook"}: {color?: string,title?: string}) 
   <div className="w-[1px] h-full bg-[rgba(0,0,0,0.15)]"></div>
 
 </div>
-  <p className="text-sm text-shadow-2xs text-shadow-[rgba(255,255,255,1)] 0 font-medium absolute bottom-[8px] left-[24px] right-[8px] text-[rgba(0,0,0,0.5)]">
+  <p className="text-sm text-shadow-2xs text-shadow-[rgba(255,255,255,1)] 0 font-medium absolute bottom-[8px] left-[24px] right-[8px] text-[rgba(0,0,0,0.3)]">
     {title}
   </p>
     </div>
