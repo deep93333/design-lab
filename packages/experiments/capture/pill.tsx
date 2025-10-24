@@ -51,6 +51,7 @@ export function Pill() {
           }}
           data-theme="dark"
           className={cn(
+            "scale-80 md:scale-100",
             "corner-smoothing pill-shadow top-8 bg-zinc-900",
             !isOpen && !captured && "hover:scale-[1.05]"
             // "opacity-100 scale-100 will-change-transform",
