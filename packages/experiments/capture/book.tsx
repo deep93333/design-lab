@@ -1,6 +1,6 @@
 export function Book({color,title="Notebook"}: {color?: string,title?: string}) {
   return (
-    <div className="p-4">
+    <div className="p-4 select-none">
     <div className="perspective-[800px] w-[150px] aspect-[3.5/4] relative group/book active:translate-z-[30px] active:rotate-y-[-30deg] transition-all duration-300">
     <div className="relative z-20 flex flex-row shadow-lg shadow-[rgba(0,0,0,0.1)] w-[150px] aspect-[3.5/4] bg-[#f1f1f1] overflow-hidden rounded-lg transform-gpu transition-all duration-300 group-active/book:translate-z-[30px] group-active/book:rotate-y-[-30deg] group-hover/book:translate-z-[30px] group-hover/book:rotate-y-[-30deg]">
     <div className="absolute z-30 rounded-lg inset-0 shadow-[0_0_0_0.85px_rgba(0,0,0,0.1)_inset,2px_0_1px_0_rgba(0,0,0,0.1)_inset,-1.5px_0_1px_0_rgba(0,0,0,0.1)_inset,0_2px_2px_0_rgba(255,255,255,0.1)_inset,0_8px_16px_0_rgba(0,0,0,0.05)]"></div>

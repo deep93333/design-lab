@@ -180,7 +180,7 @@
                   title="Book"
                   description="Created this book UI for my capture app spaces"
                   component={
-                  <div className="w-full h-full scale-75 md:scale-100 gap-8 flex items-center justify-center">
+                  <div className="w-full h-full scale-85 md:scale-100 gap-4 flex items-center justify-center">
                   <Book />
                   <Book color="rgb(186.68, 1.2749, 57.73)" />
                   </div>
@@ -322,7 +322,7 @@
             delay: 3.5,
             ease: "easeOut",
           }}
-          className="w-full overflow-hidden bg-[#f1f1f1] relative aspect-[16/10] flex flex-col items-start justify-start"
+          className="w-full overflow-hidden bg-[#f1f1f1] relative aspect-[16/12] flex flex-col items-start justify-start"
         >
           {component}
         </motion.div>
@@ -412,11 +412,11 @@
     const animate = { opacity: 1 };
     return (
       <div className={cn("relative flex flex-col items-start justify-start w-full py-4 md:py-8", className)}>
-        <motion.div className="w-1.5 h-1.5 border-l border-l-foreground/30 border-t border-t-foreground/30 absolute left-0 bg-transparent top-0 " initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
-        <motion.div className="w-1.5 h-1.5 border-l border-l-foreground/30 border-b border-b-foreground/30 absolute left-0 bg-transparent bottom-0" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
+        <motion.div className="w-1.5 h-1.5 z-10 border-l border-l-foreground/30 border-t border-t-foreground/30 absolute left-[-0.5px] bg-transparent top-[-0.5px] " initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
+        <motion.div className="w-1.5 h-1.5 z-10 border-l border-l-foreground/30 border-b border-b-foreground/30 absolute left-[-0.5px] bg-transparent bottom-[-0.5px]" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
         {children}
-        <motion.div className="w-1.5 h-1.5 border-r border-r-foreground/30 border-t border-t-foreground/30 absolute right-0 bg-transparent top-0" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
-        <motion.div className="w-1.5 h-1.5 border-r border-r-foreground/30 border-b border-b-foreground/30 absolute right-0 bg-transparent bottom-0" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
+        <motion.div className="w-1.5 h-1.5 z-10 border-r border-r-foreground/30 border-t border-t-foreground/30 absolute right-[-0.5px] bg-transparent top-[-0.5px]" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
+        <motion.div className="w-1.5 h-1.5 z-10 border-r border-r-foreground/30 border-b border-b-foreground/30 absolute right-[-0.5px] bg-transparent bottom-[-0.5px]" initial={initial} animate={animate} transition={{ delay: 1 }}></motion.div>
       </div>
     );
   };
