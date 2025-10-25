@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useAnimation } from 'motion/react';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { cn } from './utils';
 import {InboxIcon,HomeIcon,GearIcon} from '@deep-design-lab/ui'
 
