@@ -1,5 +1,5 @@
   import { FloatingActions } from "@deep-design-lab/bottom-menu-bar";
-  import { Book, cn, Pill } from "@deep-design-lab/capture";
+  import { Book, cn, Pill, SlidingTabs } from "@deep-design-lab/capture";
   import {
     ArrowUpRightIcon,
     Button,
@@ -183,6 +183,17 @@
                   <div className="w-full h-full scale-85 md:scale-100 gap-4 flex items-center justify-center">
                   <Book />
                   <Book color="rgb(186.68, 1.2749, 57.73)" />
+                  </div>
+                  
+                  }
+                />
+                 <Experiment
+                  className="pt-8"
+                  title="Sliding Tabs"
+                  description="A sliding tabs component for navigation."
+                  component={
+                    <div className="w-full h-full flex items-center justify-center">
+                  <SlidingTabs/>
                   </div>
                   
                   }

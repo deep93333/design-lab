@@ -7,4 +7,5 @@ export * from "./pill";
 export * from "./shortcut";
 export * from "./utils";
 export * from "./book"
+export * from "./sliding-tabs"
 
