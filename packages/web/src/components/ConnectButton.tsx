@@ -29,7 +29,7 @@ export const ConnectButton = ({
       <MotionButton
         variant="ghost"
         size="lg"
-        className="w-full group px-4 md:px-8 py-2 rounded-none"
+        className="w-full group px-6 md:px-8 py-2 rounded-none"
         onClick={() => window.open(href, "_blank")}
         onMouseEnter={playHoverSound}
       >

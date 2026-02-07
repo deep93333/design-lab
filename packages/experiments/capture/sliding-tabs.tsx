@@ -105,9 +105,8 @@ export const SlidingTabs = () => {
               <a
               href="#"
                 className={cn(
-                  'block rounded-6 flex items-center gap-2 px-3 py-1.5  text-zinc-400 font-medium transition-colors duration-200 hover:text-zinc-800',
-                  'text-sm'
-                  
+                  'block rounded-6 flex items-center gap-1.5 md:gap-2 px-2 py-1 md:px-3 md:py-1.5 text-zinc-400 font-medium transition-colors duration-200 hover:text-zinc-800',
+                  'text-xs md:text-sm'
                 )}
                 onMouseEnter={e => {
                   updateBackground(e.currentTarget);
@@ -115,7 +114,7 @@ export const SlidingTabs = () => {
                 onMouseLeave={resetBackground}
                
               >
-                <Icon className="!size-4" />
+                <Icon className="!size-3.5 md:!size-4" />
                 {link.label}
               </a>
             </li>

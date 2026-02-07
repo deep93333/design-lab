@@ -79,12 +79,12 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
         {isActive && content && (
           <motion.div
             key="shared-popover"
-            initial={{ opacity: 0, scale: 0.95, y: -10, left: "50%" }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ 
               opacity: 1, 
               scale: 1, 
               y: 0,
-              left: content.position.x - 150,
+              left: Math.min(Math.max(content.position.x - 150, 8), window.innerWidth - 308),
             }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ 
@@ -93,9 +93,8 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
             }}
             className="fixed z-[99999] pointer-events-none"
             style={{
-              left: "-150px",
+              left: Math.min(Math.max(content.position.x - 150, 8), window.innerWidth - 308),
               top: content.position.y - 8,
-              transform: "translateX(-50%)",
             }}
           >
             <div className="w-[300px] p-1 rounded-xl overflow-hidden bg-white shadow-2xl ring-[0.8px] ring-black/10">

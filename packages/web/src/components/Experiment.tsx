@@ -18,7 +18,7 @@ export const Experiment = ({
   return (
     <div
       className={cn(
-        "flex px-4 md:px-8  flex-col items-start justify-start w-full",
+        "flex px-6 md:px-8 flex-col items-start justify-start w-full",
         className,
       )}
     >
