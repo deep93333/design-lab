@@ -1,5 +1,6 @@
 import { ArrowUpRightIcon } from "@deep-design-lab/ui";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { useHoverSound } from "../hooks/useHoverSound";
 import { fadeUp } from "../constants/animations";
 
@@ -68,7 +69,7 @@ export const Project = ({
         </p>
         <div className="flex-1" />
       </motion.div>
-      <ArrowUpRightIcon className="!size-5 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200" />
+      <ArrowUpRight className="w-5 h-5 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200" strokeWidth={1.5} />
     </button>
   );
 };

@@ -1,7 +1,14 @@
+export { CachedImage } from "./CachedImage";
+export { CompanyLink } from "./CompanyLink";
+export { CompanyLinkWithSharedPopover } from "./CompanyLinkWithSharedPopover";
+export { CompanyPopover } from "./CompanyPopover";
 export { ConnectButton } from "./ConnectButton";
 export { Experiment } from "./Experiment";
 export { HoverPopover } from "./HoverPopover";
+export { PrefetchImages } from "./PrefetchImages";
+export { ProfoundLogo } from "./ProfoundLogo";
 export { Project } from "./Project";
+export { SharedPopoverProvider, useSharedPopover } from "./SharedPopover";
 export { ContentBox } from "./ui/ContentBox";
 export { SectionLabel } from "./ui/SectionLabel";
 export { Separator } from "./ui/Separator";
