@@ -273,8 +273,8 @@ function App() {
                 />
 
                 <ConnectButton
-                  label="deep_lakhani_"
-                  href="https://x.com/deep_lakhani_"
+                  label="deeplakhani"
+                  href="https://x.com/deeplakhani"
                   icon={XBrandIcon}
                   delay={4.1}
                 />
