@@ -84,21 +84,27 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
           >
             <div className="w-[300px] p-1 rounded-xl overflow-hidden bg-white shadow-2xl ring-[0.8px] ring-black/10">
               {content.ogImage && !imageError ? (
-                <div className="w-full rounded-lg aspect-[16/10] overflow-hidden bg-gray-100 relative">
+                <div className="w-full rounded-lg aspect-[16/10] overflow-hidden bg-gray-50 relative">
                   {!imageLoaded && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" 
+                        style={{
+                          backgroundSize: '200% 100%',
+                          animation: 'shimmer 2s infinite',
+                        }}
+                      />
                     </div>
                   )}
                   <CachedImage
                     src={content.url}
                     alt={`${content.name} preview`}
-                    className={`w-full rounded-lg h-full object-cover transition-opacity duration-300 ${
+                    className={`w-full rounded-lg h-full object-contain transition-opacity duration-300 ${
                       imageLoaded ? "opacity-100" : "opacity-0"
                     }`}
                     onLoad={() => setImageLoaded(true)}
                     onError={() => setImageError(true)}
                   />
+                  <div className="absolute inset-0 rounded-lg ring-[0.65px] ring-inset ring-black/10 pointer-events-none" />
                 </div>
               ) : (
                 <div className="w-full aspect-[16/10] bg-gray-200 flex items-center justify-center">
