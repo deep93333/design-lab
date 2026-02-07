@@ -26,7 +26,7 @@ function App() {
 
   return (
       <SharedPopoverProvider>
-      <div className="relative bg-[#f9f9f9] flex flex-col w-screen antialiased ">
+      <div className="relative bg-[#FEFEFD] flex flex-col w-screen antialiased ">
         <PrefetchImages urls={screenshotUrls} />
         {/* <motion.div
           className="px-4 md:px-0 pointer-events-none bg-[#f5f5f5]"
@@ -142,7 +142,7 @@ function App() {
                   >
                     Profound
                   </CompanyLinkWithSharedPopover>
-                  . Previously at{" "}
+                  Previously at{" "}
                   <CompanyLinkWithSharedPopover
                     name={companyData.endex.name}
                     url={companyData.endex.url}

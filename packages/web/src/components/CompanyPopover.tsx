@@ -21,7 +21,7 @@ export const CompanyPopover = ({
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   const handleMouseEnter = () => {
     timeoutRef.current = setTimeout(() => {

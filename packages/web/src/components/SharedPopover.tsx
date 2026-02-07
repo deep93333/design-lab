@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, useRef } from "react";
+import { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CachedImage } from "./CachedImage";
 
@@ -30,7 +30,7 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
   const [isActive, setIsActive] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   const show = useCallback((newContent: PopoverContent) => {
     if (timeoutRef.current) {
@@ -54,6 +54,20 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
       setImageError(false);
     }, 150);
   }, []);
+
+  useEffect(() => {
+    if (!isActive) return;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("a")) {
+        hide();
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchStart);
+    return () => document.removeEventListener("touchstart", handleTouchStart);
+  }, [isActive, hide]);
 
   return (
     <SharedPopoverContext.Provider value={{ show, hide, isActive }}>

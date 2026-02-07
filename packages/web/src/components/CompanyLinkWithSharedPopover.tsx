@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useCallback } from "react";
 import { useSharedPopover } from "./SharedPopover";
 import { ArrowUpRight } from "lucide-react";
 
@@ -19,27 +19,35 @@ export const CompanyLinkWithSharedPopover = ({
 }: CompanyLinkProps) => {
   const { show, hide, isActive } = useSharedPopover();
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const showingForUrlRef = useRef<string | null>(null);
 
-  const handleMouseEnter = () => {
+  const showPopover = useCallback(() => {
     if (linkRef.current) {
       const rect = linkRef.current.getBoundingClientRect();
-      
-      // Calculate center of the link
       const centerX = rect.left + rect.width / 2;
       const topY = rect.bottom + 12;
-      
+
       show({
         name,
         url,
         ogImage,
         position: { x: centerX, y: topY },
       });
+      showingForUrlRef.current = url;
     }
-  };
+  }, [name, url, ogImage, show]);
 
-  const handleMouseLeave = () => {
-    hide();
-  };
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (isActive && showingForUrlRef.current === url) {
+        return;
+      }
+
+      e.preventDefault();
+      showPopover();
+    },
+    [isActive, url, showPopover]
+  );
 
   return (
     <span className="inline-flex items-center gap-0.5 relative">
@@ -49,13 +57,13 @@ export const CompanyLinkWithSharedPopover = ({
         target="_blank"
         rel="noopener noreferrer"
         className="text-foreground px-2 inline-flex items-center gap-1 underline decoration-foreground/20 underline-offset-4 underline-w-full group"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={showPopover}
+        onMouseLeave={hide}
+        onTouchEnd={handleTouchEnd}
       >
         {inlineIcon}
         {children}
-              <ArrowUpRight className="w-3 h-3 text-foreground/30" strokeWidth={1.5} />
-
+        <ArrowUpRight className="w-3 h-3 text-foreground/30" strokeWidth={1.5} />
       </a>
     </span>
   );

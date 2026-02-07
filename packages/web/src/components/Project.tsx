@@ -1,4 +1,3 @@
-import { ArrowUpRightIcon } from "@deep-design-lab/ui";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useHoverSound } from "../hooks/useHoverSound";
