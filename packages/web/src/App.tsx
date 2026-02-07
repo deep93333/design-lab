@@ -192,8 +192,12 @@ function App() {
             <Separator />
 
             <ContentBox className="flex flex-col items-start justify-start w-full py-4 md:py-8">
-              <SectionLabel label="Projects" delay={0.5} />
-              <div className="flex flex-col w-full divide-y divide-foreground/5 [&:hover>a]:opacity-40 [&:hover>a:hover]:opacity-100">
+              <SectionLabel label="Projects" delay={2} />
+              <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{
+                    duration: 0.6,
+                    delay: 2,
+                    ease: "easeOut",
+                  }} className="flex flex-col w-full divide-y divide-foreground/5 [&:hover>a]:opacity-40 [&:hover>a:hover]:opacity-100">
                 <Project
                   index={0}
                   year="2024"
@@ -210,13 +214,13 @@ function App() {
                   href="https://resurf.so"
                   ogImage="https://resurf.so"
                 />
-              </div>
+              </motion.div>
             </ContentBox>
 
             <Separator />
 
             <ContentBox className="flex flex-col items-start justify-start w-full py-4 md:py-8">
-              <SectionLabel label="Recent Experiments" delay={0.4} />
+              <SectionLabel label="Recent Experiments" delay={2.3} />
               <div className="flex flex-col divide-y divide-foreground/5 w-full">
                 <Experiment
                   title="Quick Capture"
