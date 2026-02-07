@@ -13,6 +13,7 @@
 		"@deep-design-lab/bottom-menu-bar": "workspace:*",
 		"@deep-design-lab/capture": "workspace:*",
 		"@deep-design-lab/ui": "workspace:*",
+		"@number-flow/react": "^0.5.11",
 		"@tailwindcss/postcss": "^4.1.11",
 		"@tanstack/react-router": "^1.95.7",
 		"gsap": "^3.14.2",

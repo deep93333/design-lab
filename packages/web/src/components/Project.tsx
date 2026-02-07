@@ -1,74 +1,79 @@
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { useRef, useCallback } from "react";
 import { useHoverSound } from "../hooks/useHoverSound";
-import { fadeUp } from "../constants/animations";
+import { useSharedPopover } from "./SharedPopover";
 
 type ProjectProps = {
   title: string;
   description: string;
-  icon: string;
   href: string;
-  comingSoon?: boolean;
+  ogImage?: string;
+  year: string;
 };
 
 export const Project = ({
   title,
   description,
-  icon,
   href,
-  comingSoon,
+  ogImage,
+  year,
 }: ProjectProps) => {
   const { playHoverSound } = useHoverSound();
+  const { show, hide, isActive } = useSharedPopover();
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const showingForUrlRef = useRef<string | null>(null);
+
+  const showPopover = useCallback(() => {
+    if (linkRef.current) {
+      const rect = linkRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const topY = rect.bottom + 12;
+
+      show({
+        name: title,
+        url: href,
+        ogImage: ogImage ?? href,
+        useOgImage: true,
+        position: { x: centerX, y: topY },
+      });
+      showingForUrlRef.current = href;
+    }
+  }, [title, href, ogImage, show]);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (isActive && showingForUrlRef.current === href) {
+        return;
+      }
+      e.preventDefault();
+      showPopover();
+    },
+    [isActive, href, showPopover]
+  );
 
   return (
-    <button
-      className="flex py-4 px-4 md:px-8 relative group hover:bg-[#f1f1f1]  cursor-pointer flex-row items-start justify-start gap-3 w-full text-left"
-      onClick={() => {
-        window.open(href, "_blank");
+    <a
+      ref={linkRef}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative flex items-center justify-between gap-4 py-3 px-4 md:px-8 w-full transition-opacity duration-150"
+      onMouseEnter={() => {
+        playHoverSound();
+        showPopover();
       }}
-      onMouseEnter={playHoverSound}
-      type="button"
+      onMouseLeave={hide}
+      onTouchEnd={handleTouchEnd}
     >
-      <motion.div className="flex items-center justify-center !w-10 !h-10 shrink-0 relative"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        transition={{
-          duration: 0.6,
-          delay: 2.9,
-          ease: "easeOut",
-        }}
-      >
-        <img src={icon} alt={title} className="w-full h-full rounded-lg" />
-        <div className="absolute inset-0 rounded-lg ring-[0.65px] ring-foreground/10 ring-inset" />
-      </motion.div>
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        transition={{
-          duration: 0.6,
-          delay: 2.9,
-          ease: "easeOut",
-        }}
-        className="flex flex-col items-start justify-center gap-0 w-full"
-      >
-        <div className="flex flex-row items-center gap-2">
-          <motion.p className="text-sm text-foreground/90 leading-relaxed">
-            {title}
-          </motion.p>
-          {comingSoon && (
-            <span className="text-[10px] font-mono bg-foreground/10 text-zinc-600 tracking-widest text-cyan-500 leading-relaxed px-1.5 py-0.5 rounded-md">
-              COMING SOON
-            </span>
-          )}
-        </div>
-        <p className="text-sm text-foreground/60 leading-relaxed">
-          {description}
-        </p>
-        <div className="flex-1" />
-      </motion.div>
-      <ArrowUpRight className="w-5 h-5 text-zinc-400 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200" strokeWidth={1.5} />
-    </button>
+      <span className="text-sm text-foreground/40 tabular-nums shrink-0 w-10">{year}</span>
+      <span className="text-sm text-foreground/90 flex-1 inline-flex items-center gap-1.5 group-hover:opacity-100 transition-opacity duration-150">
+        <img
+          src={`https://www.google.com/s2/favicons?domain=${new URL(ogImage ?? href).hostname}&sz=128`}
+          alt=""
+          className="w-3.5 h-3.5 rounded-sm"
+        />
+        {title}
+      </span>
+      <span className="text-sm text-foreground/40 text-right shrink-0">{description}</span>
+    </a>
   );
 };

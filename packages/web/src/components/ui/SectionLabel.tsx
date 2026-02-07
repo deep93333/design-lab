@@ -17,7 +17,7 @@ export const SectionLabel = ({ label, delay }: SectionLabelProps) => {
         delay: delay,
         ease: "easeOut",
       }}
-      className="text-xs px-4 md:px-8 py-4 text-foreground/60 font-mono tracking-widest"
+      className="text-sm px-4 md:px-8 py-4 text-foreground/40"
     >
       {label}
     </motion.p>

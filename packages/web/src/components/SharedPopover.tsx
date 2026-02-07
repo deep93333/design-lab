@@ -1,11 +1,13 @@
 import { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CachedImage } from "./CachedImage";
+import { getOgImageUrl } from "../utils/screenshot";
 
 type PopoverContent = {
   name: string;
   url: string;
   ogImage?: string;
+  useOgImage?: boolean;
   position: { x: number; y: number };
 };
 
@@ -109,21 +111,37 @@ export const SharedPopoverProvider = ({ children }: { children: React.ReactNode 
                       />
                     </div>
                   )}
-                  <CachedImage
-                    src={content.url}
-                    alt={`${content.name} preview`}
-                    className={`w-full rounded-lg h-full object-contain transition-opacity duration-300 ${
-                      imageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                    onLoad={() => setImageLoaded(true)}
-                    onError={() => setImageError(true)}
-                  />
+                  {content.useOgImage ? (
+                    <img
+                      src={getOgImageUrl(content.ogImage!)}
+                      alt={`${content.name} preview`}
+                      className={`w-full rounded-lg h-full object-cover transition-opacity duration-300 ${
+                        imageLoaded ? "opacity-100" : "opacity-0"
+                      }`}
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => setImageError(true)}
+                    />
+                  ) : (
+                    <CachedImage
+                      src={content.ogImage!}
+                      alt={`${content.name} preview`}
+                      className={`w-full rounded-lg h-full object-contain transition-opacity duration-300 ${
+                        imageLoaded ? "opacity-100" : "opacity-0"
+                      }`}
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => setImageError(true)}
+                    />
+                  )}
                   <div className="absolute inset-0 rounded-lg ring-[0.65px] ring-inset ring-black/10 pointer-events-none" />
                 </div>
               ) : (
-                <div className="w-full aspect-[16/10] bg-gray-200 flex items-center justify-center">
-                  <p className="text-sm text-gray-500">Loading preview...</p>
-                </div>
+                <div className="w-full aspect-[16/10] rounded-lg bg-gray-200 flex items-center justify-center">
+ <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" 
+                        style={{
+                          backgroundSize: '200% 100%',
+                          animation: 'shimmer 2s infinite',
+                        }}
+                      />                </div>
               )}
             </div>
           </motion.div>
